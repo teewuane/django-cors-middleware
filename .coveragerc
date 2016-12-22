@@ -1,5 +1,5 @@
 [run]
-source=corsheaders
+source=corsmiddleware
 
 [report]
 omit=*tests*,*__init__*

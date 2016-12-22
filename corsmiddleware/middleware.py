@@ -22,8 +22,8 @@ except ImportError:
     # https://docs.djangoproject.com/en/1.10/topics/http/middleware/#upgrading-pre-django-1-10-style-middleware
     MiddlewareMixin = object
 
-from corsheaders import defaults as settings
-from corsheaders import signals
+from corsmiddleware import defaults as settings
+from corsmiddleware import signals
 
 
 ACCESS_CONTROL_ALLOW_ORIGIN = 'Access-Control-Allow-Origin'

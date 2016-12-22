@@ -15,11 +15,11 @@ def run_tests():
         middleware_setting = 'MIDDLEWARE_CLASSES'
 
     middleware = list(getattr(global_settings, middleware_setting) or [])
-    middleware.append('corsheaders.middleware.CorsMiddleware')
+    middleware.append('corsmiddleware.middleware.CorsMiddleware')
 
     config = {
         'INSTALLED_APPS': [
-            'corsheaders',
+            'corsmiddleware',
         ],
         'DATABASES': {
             'default': {
@@ -27,7 +27,7 @@ def run_tests():
                 'TEST_NAME': ':memory:',
             },
         },
-        'ROOT_URLCONF': 'corsheaders.tests',
+        'ROOT_URLCONF': 'corsmiddleware.tests',
         middleware_setting: middleware,
     }
     settings.configure(**config)
@@ -41,7 +41,7 @@ def run_tests():
         from django.test.simple import DjangoTestSuiteRunner as Runner
 
     test_runner = Runner(verbosity=1)
-    return test_runner.run_tests(['corsheaders'])
+    return test_runner.run_tests(['corsmiddleware'])
 
 
 def main():

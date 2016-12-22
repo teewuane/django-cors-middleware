@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-from corsheaders import __version__
+from corsmiddleware import __version__
 from setuptools import setup
 
 setup(
@@ -11,7 +11,7 @@ setup(
     author='Zeste de Savoir',
     author_email='dev@gustavi.net',
     url='https://github.com/zestedesavoir/django-cors-middleware',
-    packages=['corsheaders'],
+    packages=['corsmiddleware'],
     license='MIT License',
     keywords='django cors middleware rest api',
     platforms=['any'],

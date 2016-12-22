@@ -45,7 +45,7 @@ and then add it to your installed apps:
 
     INSTALLED_APPS = (
         ...
-        'corsheaders',
+        'corsmiddleware',
         ...
     )
 
@@ -56,7 +56,7 @@ You will also need to add a middleware class to listen in on responses:
     # Use `MIDDLEWARE_CLASSES` prior to Django 1.10
     MIDDLEWARE = [
         ...
-        'corsheaders.middleware.CorsMiddleware',
+        'corsmiddleware.middleware.CorsMiddleware',
         'django.middleware.common.CommonMiddleware',
         ...
     ]
@@ -74,7 +74,7 @@ we provide a Django signal that covers this.
 We have a ``check_request_enabled`` signal that provides the request.
 Here is an example configuration::
 
-    from corsheaders import signals
+    from corsmiddleware import signals
     from .models import Site
 
     def handler(sender, request, **kwargs):
@@ -256,7 +256,7 @@ Specify whether to replace the HTTP\_REFERER header if CORS checks pass
 so that CSRF django middleware checks will work with https
 
 Note: With this feature enabled, you also need to add the
-corsheaders.middleware.CorsPostCsrfMiddleware after
+corsmiddleware.middleware.CorsPostCsrfMiddleware after
 django.middleware.csrf.CsrfViewMiddleware to undo the header replacement
 
 Default:
